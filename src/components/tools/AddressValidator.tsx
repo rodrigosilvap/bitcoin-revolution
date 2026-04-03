@@ -134,15 +134,15 @@ export function AddressValidator() {
 
       {/* Right column — QR Code */}
       <div className="flex flex-col">
-        <Card className="flex-1">
+        <Card className="flex flex-1 flex-col">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base">
               <QrCode className="h-4 w-4" />
               QR Code
             </CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col items-center justify-center py-12 gap-4">
-            {address.trim() ? (
+          <CardContent className="flex flex-1 flex-col items-center justify-center py-12 gap-4 min-h-64">
+            {address.trim() && result?.valid ? (
               <>
                 <div className="rounded-xl bg-white p-4 shadow-md">
                   <QRCodeSVG
