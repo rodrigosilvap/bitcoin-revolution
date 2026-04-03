@@ -70,6 +70,7 @@
   },
   "tools": {
     "title": "Bitcoin Tools",
+    "backToTools": "Back to Tools",
     "subtitle": "Powerful tools to help you understand Bitcoin markets, plan your investment strategy, and validate addresses.",
     "priceConverter": "Price Converter",
     "priceConverterDesc": "Convert between Bitcoin, satoshi, and major fiat currencies (USD, EUR, JPY, GBP, CNY, CHF, INR, BRL) using real-time exchange rates.",
@@ -222,6 +223,11 @@
     "title": "BTC Treasuries",
     "subtitle": "Bitcoin treasury holdings of public companies",
     "disclaimer": "Disclaimer: This page content is provided by"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist.",
+    "goHome": "Go home"
   },
   "common": {
     "loading": "Loading...",

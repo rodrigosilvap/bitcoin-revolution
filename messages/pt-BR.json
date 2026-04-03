@@ -70,6 +70,7 @@
   },
   "tools": {
     "title": "Ferramentas Bitcoin",
+    "backToTools": "Voltar para Ferramentas",
     "subtitle": "Ferramentas poderosas para ajudá-lo a entender os mercados Bitcoin, planejar sua estratégia de investimento e validar endereços.",
     "priceConverter": "Conversor de Preço",
     "priceConverterDesc": "Converta entre Bitcoin, satoshi e principais moedas fiduciárias (USD, EUR, JPY, GBP, CNY, CHF, INR, BRL) usando taxas de câmbio em tempo real.",
@@ -222,6 +223,11 @@
     "title": "Tesouros BTC",
     "subtitle": "Tesouros Bitcoin de empresas públicas",
     "disclaimer": "Aviso: O conteúdo desta página é fornecido por"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você está procurando não existe.",
+    "goHome": "Ir para casa"
   },
   "common": {
     "loading": "Carregando...",

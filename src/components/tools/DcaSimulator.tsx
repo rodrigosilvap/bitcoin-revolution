@@ -212,7 +212,7 @@ export function DcaSimulator() {
                     scales: {
                       x: { ticks: { maxTicksLimit: 6, color: '#888' }, grid: { color: 'rgba(255,255,255,0.05)' } },
                       y: {
-                        ticks: { color: '#888', callback: (v) => `$${Number(v).toLocaleString()}` },
+                        ticks: { color: '#888', callback: (v: unknown) => `$${Number(v).toLocaleString()}` },
                         grid: { color: 'rgba(255,255,255,0.05)' },
                       },
                     },

@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getTranslations, getLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import { getAllSlugs, getPostBySlug, markdownToHtml } from '@/lib/blog';
 import { BlogPostContent } from '@/components/blog/BlogPostContent';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft } from 'lucide-react';
+import { Link } from '@/navigation';
 
 interface Props {
-  params: { slug: string; locale: string };
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 export async function generateStaticParams() {
@@ -21,13 +21,13 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const locale = params.locale;
+  const { slug, locale } = await params;
   const slugs = getAllSlugs(locale);
-  if (!slugs.includes(params.slug)) {
+  if (!slugs.includes(slug)) {
     const enSlugs = getAllSlugs('en');
-    if (!enSlugs.includes(params.slug)) return {};
+    if (!enSlugs.includes(slug)) return {};
   }
-  const post = getPostBySlug(params.slug, locale);
+  const post = getPostBySlug(slug, locale);
   return {
     title: post.title,
     description: post.excerpt,
@@ -37,15 +37,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const t = await getTranslations('blog');
-  const locale = params.locale;
+  const { slug, locale } = await params;
 
   const allSlugs = getAllSlugs(locale);
   const enSlugs = getAllSlugs('en');
-  if (!allSlugs.includes(params.slug) && !enSlugs.includes(params.slug)) {
+  if (!allSlugs.includes(slug) && !enSlugs.includes(slug)) {
     notFound();
   }
 
-  const post = getPostBySlug(params.slug, locale);
+  const post = getPostBySlug(slug, locale);
   const html = await markdownToHtml(post.content);
   const isExternal = post.image.startsWith('http');
 

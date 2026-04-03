@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { Menu } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { Link } from '@/navigation';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -27,7 +27,7 @@ export async function Header() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-foreground">
-          <Image src="/images/icons/btc_logo.png" alt="Bitcoin" width={28} height={28} />
+          <Image src="/images/icons/logo.png" alt="Bitcoin" width={28} height={28} />
           <span className="hidden text-lg sm:block">{t('header.logo')}</span>
         </Link>
 

@@ -49,7 +49,7 @@ async function validateBase58Check(address: string): Promise<boolean> {
   const checksum = decoded.slice(-4);
 
   const hash1 = await sha256(payload);
-  const hash2 = await sha256(hash1);
+  const hash2 = await sha256(hash1.buffer as ArrayBuffer);
 
   return checksum.every((b, i) => b === hash2[i]);
 }

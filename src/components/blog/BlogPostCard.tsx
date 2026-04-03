@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import Image from 'next/image';
 import type { PostMeta } from '@/lib/blog';
 import { Card, CardContent } from '@/components/ui/card';
@@ -15,14 +15,13 @@ export function BlogPostCard({ post }: BlogPostCardProps) {
     <Link href={`/blog/${post.slug}`} className="group">
       <Card className="h-full overflow-hidden transition-all duration-200 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
         {/* Image */}
-        <div className="relative h-48 w-full overflow-hidden bg-muted">
+        <div className="relative -mt-4 h-48 w-full overflow-hidden bg-muted">
           {post.image ? (
             <Image
               src={post.image}
               alt={post.title}
               fill
               className="object-cover transition-transform duration-300 group-hover:scale-105"
-              {...(isExternal ? {} : {})}
               unoptimized={isExternal}
             />
           ) : (

@@ -44,6 +44,10 @@ export function getPostBySlug(slug: string, locale: string): PostData {
     filePath = path.join(getLocaleDir('en'), `${slug}.md`);
   }
 
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`Blog post not found: ${slug}`);
+  }
+
   const raw = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(raw);
 

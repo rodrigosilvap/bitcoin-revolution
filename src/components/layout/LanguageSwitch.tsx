@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname, useRouter } from '@/navigation';
 import { Globe } from 'lucide-react';
 import {
   DropdownMenu,
@@ -22,19 +22,7 @@ export function LanguageSwitch() {
   const pathname = usePathname();
 
   function switchLocale(newLocale: string) {
-    // Replace locale prefix in the path
-    let newPath = pathname;
-    if (pathname.startsWith(`/${locale}`)) {
-      newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
-    } else {
-      // English (no prefix) → add pt-BR prefix
-      newPath = `/${newLocale}${pathname}`;
-    }
-    // English is the default locale — strip its prefix
-    if (newLocale === 'en') {
-      newPath = newPath.replace(/^\/en/, '') || '/';
-    }
-    router.push(newPath);
+    router.replace(pathname, { locale: newLocale });
   }
 
   return (

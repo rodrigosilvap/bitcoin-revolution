@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
+import { Link } from '@/navigation';
 import { Separator } from '@/components/ui/separator';
 
 export async function Footer() {
@@ -13,7 +13,7 @@ export async function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-3">
             <Link href="/" className="flex items-center gap-2 font-bold">
-              <Image src="/images/icons/btc_logo.png" alt="Bitcoin" width={24} height={24} />
+              <Image src="/images/icons/logo.png" alt="Bitcoin" width={24} height={24} />
               <span className="text-foreground">{t('header.logo')}</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
