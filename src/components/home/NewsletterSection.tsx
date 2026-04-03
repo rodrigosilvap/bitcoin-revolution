@@ -22,9 +22,9 @@ export function NewsletterSection() {
   }
 
   return (
-    <section className="border-t border-border bg-background py-20">
-      <div className="container max-w-2xl text-center">
-        <h2 className="mb-3 text-3xl font-bold">{t('newsletterTitle')}</h2>
+    <section className="border-t border-border bg-background py-24">
+      <div className="container max-w-lg text-center">
+        <h2 className="mb-3 text-2xl font-semibold tracking-tight">{t('newsletterTitle')}</h2>
         <p className="mb-8 text-muted-foreground">{t('newsletterSubtitle')}</p>
 
         {status === 'success' ? (

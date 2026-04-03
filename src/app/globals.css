@@ -45,7 +45,7 @@
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
-    --border: 24 100% 50% / 0.2;     /* orange tint border: rgba(255,102,0,0.2) */
+    --border: 0 0% 18%;               /* neutral dark border */
     --input: 0 0% 15%;
     --ring: 24 100% 50%;
   }
