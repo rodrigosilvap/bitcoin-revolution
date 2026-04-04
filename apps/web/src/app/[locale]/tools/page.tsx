@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import { Card, CardContent } from '@/components/ui/card';
-import { BarChart2, ArrowLeftRight, TrendingUp, Key, Shield, Building2, Layers } from 'lucide-react';
+import { BarChart2, ArrowLeftRight, TrendingUp, Key, Shield, Building2, Layers, Search, QrCode, Activity, Share2 } from 'lucide-react';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('tools');
@@ -54,6 +54,30 @@ export default async function ToolsPage() {
       icon: Layers,
       titleKey: 'xpubGenerator' as const,
       descKey: 'xpubGeneratorDesc' as const,
+    },
+    {
+      href: '/tools/block-explorer',
+      icon: Search,
+      titleKey: 'blockExplorer' as const,
+      descKey: 'blockExplorerDesc' as const,
+    },
+    {
+      href: '/tools/payment-uri',
+      icon: QrCode,
+      titleKey: 'paymentUri' as const,
+      descKey: 'paymentUriDesc' as const,
+    },
+    {
+      href: '/tools/payment-monitor',
+      icon: Activity,
+      titleKey: 'paymentMonitor' as const,
+      descKey: 'paymentMonitorDesc' as const,
+    },
+    {
+      href: '/tools/checkout-creator',
+      icon: Share2,
+      titleKey: 'checkoutCreator' as const,
+      descKey: 'checkoutCreatorDesc' as const,
     },
   ];
 

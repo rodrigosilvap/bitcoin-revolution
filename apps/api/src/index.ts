@@ -4,6 +4,7 @@ import { priceRoute } from './routes/bitcoin/price.js';
 import { marketDataRoute } from './routes/bitcoin/market-data.js';
 import { blockchainInfoRoute } from './routes/bitcoin/blockchain-info.js';
 import { priceHistoryRoute } from './routes/bitcoin/price-history.js';
+import { treasuriesRoute } from './routes/bitcoin/treasuries.js';
 
 const PORT = Number(process.env['PORT'] ?? 3001);
 const CORS_ORIGIN = process.env['CORS_ORIGIN'] ?? 'http://localhost:3000';
@@ -16,6 +17,7 @@ await app.register(priceRoute);
 await app.register(marketDataRoute);
 await app.register(blockchainInfoRoute);
 await app.register(priceHistoryRoute);
+await app.register(treasuriesRoute);
 
 app.get('/health', async () => ({ status: 'ok' }));
 

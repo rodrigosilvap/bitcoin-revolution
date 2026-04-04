@@ -1,4 +1,5 @@
-import type { PriceData, MarketData, PriceHistory } from '@seventy-capital/types';
+import type { PriceData, MarketData, PriceHistory, TreasuryData } from '@bitcoin-revolution/types';
+import { fetchMarketCaps } from './market-caps.js';
 
 const BASE = 'https://api.coingecko.com/api/v3';
 
@@ -41,6 +42,55 @@ export async function fetchMarketData(): Promise<MarketData> {
     high24h: { usd: md['high_24h']['usd'] },
     low24h: { usd: md['low_24h']['usd'] },
     lastUpdated: data.last_updated,
+  };
+}
+
+export async function fetchTreasuries(): Promise<TreasuryData> {
+  const url = `${BASE}/companies/public_treasury/bitcoin`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`CoinGecko error: ${res.status}`);
+
+  const data = await res.json() as {
+    total_holdings: number;
+    total_value_usd: number;
+    market_cap_dominance: number;
+    companies: {
+      name: string;
+      symbol: string;
+      country: string;
+      total_holdings: number;
+      total_entry_value_usd: number;
+      total_current_value_usd: number;
+      percentage_of_total_supply: number;
+      market_cap_usd: number;
+    }[];
+  };
+
+  const companies = data.companies.map((c) => ({
+    name: c.name,
+    symbol: c.symbol,
+    country: c.country,
+    totalHoldings: c.total_holdings,
+    totalEntryValueUsd: c.total_entry_value_usd,
+    totalCurrentValueUsd: c.total_current_value_usd,
+    percentageOfTotalSupply: c.percentage_of_total_supply,
+    marketCapUsd: c.market_cap_usd || undefined,
+  }));
+
+  // Enrich with live stock market caps (price × shares) from Yahoo Finance + SEC EDGAR
+  const marketCaps = await fetchMarketCaps(companies.map(c => c.symbol)).catch(() => ({} as Record<string, number>));
+  for (const company of companies) {
+    if (marketCaps[company.symbol] != null) {
+      company.marketCapUsd = marketCaps[company.symbol];
+    }
+  }
+
+  return {
+    totalHoldings: data.total_holdings,
+    totalValueUsd: data.total_value_usd,
+    marketCapDominance: data.market_cap_dominance,
+    fetchedAt: Date.now(),
+    companies,
   };
 }
 

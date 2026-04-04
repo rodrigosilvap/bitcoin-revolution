@@ -78,7 +78,7 @@ export function DcaSimulator() {
       const dcaSeries: number[] = [];
       filtered.forEach((p, i) => {
         dcaBtc += perInterval / p.price;
-        dcaSeries.push(dcaBtc * filtered[filtered.length - 1].price);
+        dcaSeries.push(dcaBtc * p.price);
       });
 
       // Lump sum: buy everything on day 1

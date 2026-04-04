@@ -1,4 +1,4 @@
-import type { BlockchainInfo } from '@seventy-capital/types';
+import type { BlockchainInfo } from '@bitcoin-revolution/types';
 
 export async function fetchBlockchainInfo(): Promise<BlockchainInfo> {
   const res = await fetch('https://blockchain.info/stats?format=json');

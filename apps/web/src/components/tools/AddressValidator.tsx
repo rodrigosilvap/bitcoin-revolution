@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 import { QRCodeSVG } from 'qrcode.react';
 import { classifyBitcoinAddress, type AddressResult } from '@/lib/address-validator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -21,9 +22,16 @@ const EXAMPLE_ADDRESSES = [
 
 export function AddressValidator() {
   const t = useTranslations('addressValidator');
+  const searchParams = useSearchParams();
   const [address, setAddress] = useState('');
   const [result, setResult] = useState<AddressResult | null>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const preset = searchParams.get('address');
+    if (preset) handleChange(preset);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const validate = useCallback(async (addr: string) => {
     if (!addr.trim()) {

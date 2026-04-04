@@ -1,5 +1,5 @@
 {
-  "name": "@seventy-capital/api",
+  "name": "@bitcoin-revolution/api",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@fastify/cors": "^9.0.1",
-    "@seventy-capital/types": "*",
+    "@bitcoin-revolution/types": "*",
     "fastify": "^4.27.0",
     "node-cache": "^5.1.2"
   },

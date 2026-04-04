@@ -63,3 +63,28 @@ export async function fetchPriceHistory(days: string, currency = 'USD'): Promise
 export async function fetchBlockchainInfo(): Promise<BlockchainInfo> {
   return apiFetch<BlockchainInfo>(`${BASE}/bitcoin/blockchain-info`);
 }
+
+export interface TreasuryCompany {
+  name: string;
+  symbol: string;
+  country: string;
+  totalHoldings: number;
+  totalEntryValueUsd: number;
+  totalCurrentValueUsd: number;
+  percentageOfTotalSupply: number;
+  marketCapUsd?: number;
+}
+
+export interface TreasuryData {
+  totalHoldings: number;
+  totalValueUsd: number;
+  marketCapDominance: number;
+  companies: TreasuryCompany[];
+  fetchedAt: number;
+}
+
+export async function fetchTreasuryData(): Promise<TreasuryData> {
+  // Uses the Next.js API route which proxies CoinGecko directly,
+  // avoiding a dependency on the Fastify server for this endpoint.
+  return apiFetch<TreasuryData>('/api/bitcoin/treasuries');
+}

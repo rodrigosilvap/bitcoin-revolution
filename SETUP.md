@@ -4,7 +4,7 @@ The project files are all created. Run the following commands to get started:
 
 ## 1. Install dependencies
 ```bash
-cd seventy-capital-next
+cd bitcoin-revolution
 npm install
 ```
 
@@ -36,7 +36,7 @@ npm start
 ## Project Structure
 
 ```
-seventy-capital-next/
+bitcoin-revolution/
 ├── messages/                  # i18n JSON files (EN + pt-BR)
 ├── public/images/             # Copied from original project
 ├── src/

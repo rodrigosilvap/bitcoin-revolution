@@ -31,3 +31,22 @@ export interface BlockchainInfo {
   nextRetarget: number;
   timestamp: number;
 }
+
+export interface TreasuryCompany {
+  name: string;
+  symbol: string;
+  country: string;
+  totalHoldings: number;
+  totalEntryValueUsd: number;
+  totalCurrentValueUsd: number;
+  percentageOfTotalSupply: number;
+  marketCapUsd?: number;
+}
+
+export interface TreasuryData {
+  totalHoldings: number;
+  totalValueUsd: number;
+  marketCapDominance: number;
+  companies: TreasuryCompany[];
+  fetchedAt: number;
+}
