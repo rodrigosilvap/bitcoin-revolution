@@ -9,10 +9,18 @@ import { HeaderBtcPrice } from './HeaderBtcPrice';
 export async function Header() {
   const t = await getTranslations();
 
-  const navLinks = [
+  const guideLinks = [
+    { href: '/learn', label: t('nav.learn') },
+    { href: '/buy', label: t('nav.buy') },
+    { href: '/secure', label: t('nav.secure') },
+  ];
+
+  const mainLinks = [
     { href: '/blog', label: t('nav.blog') },
     { href: '/tools', label: t('nav.tools') },
   ];
+
+  const allLinks = [...guideLinks, ...mainLinks];
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -24,12 +32,25 @@ export async function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map(({ href, label }) => (
+        <nav className="hidden items-center gap-1 md:flex">
+          {guideLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+              className="rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              {label}
+            </Link>
+          ))}
+
+          {/* Divider */}
+          <span className="mx-1 h-4 w-px bg-border" />
+
+          {mainLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className="rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
             >
               {label}
             </Link>
@@ -46,7 +67,7 @@ export async function Header() {
           <MobileMenu
             logoLabel={t('header.logo')}
             toggleLabel={t('header.toggleMenu')}
-            links={navLinks}
+            links={allLinks}
           />
         </div>
       </div>
