@@ -16,6 +16,7 @@ dist/
 
 # OS / editor
 .DS_Store
+Thumbs.db
 *.pem
 .vscode/
 .idea/
@@ -24,6 +25,18 @@ dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Test output
+coverage/
+junit.xml
+test-results/
+
+# Caches
+.eslintcache
+.stylelintcache
+.swc/
 
 # Vercel
 .vercel
