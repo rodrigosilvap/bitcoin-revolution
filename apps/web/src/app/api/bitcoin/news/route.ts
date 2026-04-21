@@ -85,6 +85,14 @@ function extractImageUrl(item: Record<string, unknown>): string | undefined {
   return undefined;
 }
 
+// ─── Bitcoin keyword filter ───────────────────────────────────────────────────
+
+const BITCOIN_RE = /\bbitcoin\b|\bbtc\b|\blightning network\b|\bhalving\b|\bsatoshi\b/i;
+
+function isBitcoinItem(item: NewsItem): boolean {
+  return BITCOIN_RE.test(item.title);
+}
+
 // ─── RSS fetcher ──────────────────────────────────────────────────────────────
 
 const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '@_' });
@@ -186,8 +194,11 @@ export async function GET(request: Request) {
     const res = results[i];
     const source = sources[i];
     if (res.status === 'fulfilled') {
-      statuses.push({ id: source.id, name: source.name, fetchedOk: true, count: res.value.length });
-      allItems = allItems.concat(res.value);
+      const items = source.bitcoinOnly
+        ? res.value
+        : res.value.filter(isBitcoinItem);
+      statuses.push({ id: source.id, name: source.name, fetchedOk: true, count: items.length });
+      allItems = allItems.concat(items);
     } else {
       statuses.push({ id: source.id, name: source.name, fetchedOk: false, count: 0 });
     }

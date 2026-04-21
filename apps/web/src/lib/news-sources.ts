@@ -6,19 +6,23 @@ export interface NewsSource {
   category: NewsCategory;
   rssUrl: string;
   siteUrl: string;
+  /**
+   * When true the source is Bitcoin-focused and items are not title-filtered.
+   * When false (default) only items whose title mentions Bitcoin are kept.
+   */
+  bitcoinOnly?: boolean;
 }
 
 export const DEFAULT_SOURCES: NewsSource[] = [
-  { id: 'bitcoin-magazine', name: 'Bitcoin Magazine',  category: 'news',       rssUrl: 'https://bitcoinmagazine.com/.rss/full/',  siteUrl: 'https://bitcoinmagazine.com'  },
-  { id: 'coindesk',         name: 'CoinDesk',          category: 'news',       rssUrl: 'https://feeds.feedburner.com/CoinDesk',   siteUrl: 'https://coindesk.com'          },
-  { id: 'cointelegraph',    name: 'Cointelegraph',     category: 'news',       rssUrl: 'https://cointelegraph.com/rss',           siteUrl: 'https://cointelegraph.com'     },
-  { id: 'decrypt',          name: 'Decrypt',           category: 'news',       rssUrl: 'https://decrypt.co/feed',                 siteUrl: 'https://decrypt.co'            },
-  { id: 'theblock',         name: 'The Block',         category: 'analysis',   rssUrl: 'https://www.theblock.co/rss.xml',         siteUrl: 'https://theblock.co'           },
-  { id: 'bitcoinist',       name: 'Bitcoinist',        category: 'news',       rssUrl: 'https://bitcoinist.com/feed/',            siteUrl: 'https://bitcoinist.com'        },
-  { id: 'newsbtc',          name: 'NewsBTC',           category: 'news',       rssUrl: 'https://www.newsbtc.com/feed/',           siteUrl: 'https://newsbtc.com'           },
-  { id: 'cryptoslate',      name: 'CryptoSlate',       category: 'analysis',   rssUrl: 'https://cryptoslate.com/feed/',           siteUrl: 'https://cryptoslate.com'       },
-  { id: 'bitcoin-com-news', name: 'Bitcoin.com News',  category: 'news',       rssUrl: 'https://news.bitcoin.com/feed/',          siteUrl: 'https://news.bitcoin.com'      },
-  { id: 'ambcrypto',        name: 'AMBCrypto',         category: 'news',       rssUrl: 'https://ambcrypto.com/feed/',             siteUrl: 'https://ambcrypto.com'         },
+  // ── Bitcoin-focused publications (no title filter needed) ────────────────
+  { id: 'bitcoin-magazine', name: 'Bitcoin Magazine', category: 'news',     rssUrl: 'https://bitcoinmagazine.com/.rss/full/',  siteUrl: 'https://bitcoinmagazine.com', bitcoinOnly: true  },
+  { id: 'bitcoinist',       name: 'Bitcoinist',       category: 'news',     rssUrl: 'https://bitcoinist.com/feed/',            siteUrl: 'https://bitcoinist.com',       bitcoinOnly: true  },
+  { id: 'newsbtc',          name: 'NewsBTC',          category: 'news',     rssUrl: 'https://www.newsbtc.com/feed/',           siteUrl: 'https://newsbtc.com',          bitcoinOnly: true  },
+
+  // ── Broad crypto sources – Bitcoin keyword filter applied ────────────────
+  { id: 'coindesk',         name: 'CoinDesk',         category: 'news',     rssUrl: 'https://feeds.feedburner.com/CoinDesk',   siteUrl: 'https://coindesk.com'          },
+  { id: 'cointelegraph',    name: 'Cointelegraph',    category: 'news',     rssUrl: 'https://cointelegraph.com/rss',           siteUrl: 'https://cointelegraph.com'     },
+  { id: 'theblock',         name: 'The Block',        category: 'analysis', rssUrl: 'https://www.theblock.co/rss.xml',         siteUrl: 'https://theblock.co'           },
 ];
 
 export const CSV_HEADER = 'name,category,rssUrl,siteUrl';
@@ -71,6 +75,8 @@ export function parseCsvSources(csv: string): NewsSource[] {
       category: VALID_CATEGORIES.has(cat) ? (cat as NewsCategory) : 'news',
       rssUrl,
       siteUrl: siteUrl ?? '',
+      // Custom sources default to filtered — safer assumption
+      bitcoinOnly: false,
     }];
   });
 }
