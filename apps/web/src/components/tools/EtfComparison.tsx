@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import {
   Chart as ChartJS,
@@ -97,7 +97,7 @@ function SortIcon({ active, asc }: { active: boolean; asc: boolean }) {
   return asc ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />;
 }
 
-function HolderTable({ rows, t }: { rows: HolderRow[]; t: ReturnType<typeof useTranslations> }) {
+function HolderTable({ rows, t, tabsHeader }: { rows: HolderRow[]; t: ReturnType<typeof useTranslations>; tabsHeader?: React.ReactNode }) {
   const [sortKey, setSortKey] = useState<SortKey>('btcHoldings');
   const [sortAsc, setSortAsc] = useState(false);
 
@@ -115,6 +115,13 @@ function HolderTable({ rows, t }: { rows: HolderRow[]; t: ReturnType<typeof useT
     <div className="overflow-x-auto">
       <table className="w-full">
         <thead className="border-b bg-muted/30">
+          {tabsHeader && (
+            <tr>
+              <th colSpan={7} className="px-4 pt-4 pb-3">
+                {tabsHeader}
+              </th>
+            </tr>
+          )}
           <tr>
             <th className="px-3 py-2 text-left text-xs font-medium text-muted-foreground w-10">#</th>
             {(
@@ -330,30 +337,35 @@ export function EtfComparison() {
 
       {/* ── Table with tabs ───────────────────────────────────────────── */}
       <Card className="overflow-hidden">
-        <div className="flex items-center justify-end px-6 pt-4">
+        <div className="flex items-center justify-end px-6 pt-4 pb-0">
           <Button variant="ghost" size="sm" onClick={load} className="gap-1.5 text-muted-foreground">
             <RefreshCw className="h-3.5 w-3.5" />
             {lastUpdated ? `${t('lastUpdated')}: ${lastUpdated.toLocaleTimeString()}` : ''}
           </Button>
         </div>
         <Tabs defaultValue="all">
-          <div className="px-6 pb-4">
-            <TabsList>
-              <TabsTrigger value="all">{t('tabAll')} ({allRows.length})</TabsTrigger>
-              <TabsTrigger value="etfs">{t('tabEtfs')} ({etfRows.length})</TabsTrigger>
-              <TabsTrigger value="companies">{t('tabCompanies')} ({companyRows.length})</TabsTrigger>
-            </TabsList>
-          </div>
-
-          <TabsContent value="all" className="mt-0">
-            <HolderTable rows={allRows} t={t} />
-          </TabsContent>
-          <TabsContent value="etfs" className="mt-0">
-            <HolderTable rows={etfRows} t={t} />
-          </TabsContent>
-          <TabsContent value="companies" className="mt-0">
-            <HolderTable rows={companyRows} t={t} />
-          </TabsContent>
+          {(() => {
+            const tabsHeader = (
+              <TabsList>
+                <TabsTrigger value="all">{t('tabAll')} ({allRows.length})</TabsTrigger>
+                <TabsTrigger value="etfs">{t('tabEtfs')} ({etfRows.length})</TabsTrigger>
+                <TabsTrigger value="companies">{t('tabCompanies')} ({companyRows.length})</TabsTrigger>
+              </TabsList>
+            );
+            return (
+              <>
+                <TabsContent value="all" className="mt-0">
+                  <HolderTable rows={allRows} t={t} tabsHeader={tabsHeader} />
+                </TabsContent>
+                <TabsContent value="etfs" className="mt-0">
+                  <HolderTable rows={etfRows} t={t} tabsHeader={tabsHeader} />
+                </TabsContent>
+                <TabsContent value="companies" className="mt-0">
+                  <HolderTable rows={companyRows} t={t} tabsHeader={tabsHeader} />
+                </TabsContent>
+              </>
+            );
+          })()}
         </Tabs>
       </Card>
 
