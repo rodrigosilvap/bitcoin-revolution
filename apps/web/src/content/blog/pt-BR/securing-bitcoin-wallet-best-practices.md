@@ -5,7 +5,6 @@ excerpt: "O Bitcoin coloca a responsabilidade da propriedade diretamente em suas
 image: "/images/blog/public-private-key.png"
 ---
 
-# Protegendo Sua Carteira Bitcoin: Melhores Práticas
 
 ## Soberania Exige Responsabilidade
 

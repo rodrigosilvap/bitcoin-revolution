@@ -6,7 +6,6 @@ image: "/images/blog/bitcoin-payment-disruption.png"
 ---
 
 
-# O Futuro dos Pagamentos Digitais
 
 ## Por que Bitcoin Tem o Potencial de Substituir Bancos, Cartões e Infraestrutura Fintech
 

@@ -6,7 +6,6 @@ image: "/images/blog/preserving-wealth.png"
 ---
 
 
-# Bitcoin as a Store of Value
 
 ## Preserving Wealth in an Inflationary World
 

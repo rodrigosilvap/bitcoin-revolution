@@ -5,7 +5,6 @@ excerpt: "Bitcoin places the responsibility of ownership directly in your hands.
 image: "/images/blog/public-private-key.png"
 ---
 
-# Securing Your Bitcoin Wallet: Best Practices
 
 ## Sovereignty Requires Responsibility
 

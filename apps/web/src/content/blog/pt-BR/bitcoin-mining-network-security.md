@@ -2,11 +2,10 @@
 title: "Bitcoin Mining: O Motor Por Trás da Rede"
 date: "2024-01-15"
 excerpt: "Compreenda como funciona o mining de Bitcoin, porque protege a rede, e o que significa para o futuro do dinheiro."
-image: "/images/blog/mining-rigs.jpeg"
+image: "/images/blog/mining.png"
 ---
 
 
-# Bitcoin Mining: O Motor Por Trás da Rede
 
 ## Introdução
 
@@ -17,7 +16,7 @@ Compreender o mining é essencial para quem procura entender porque funciona o B
 Este artigo explica como funciona o mining de Bitcoin, porque importa o mecanismo de consenso Proof of Work, e quais são as implicações económicas e ambientais para o futuro a longo prazo da rede.
 
 
-[img]mining-rigs.jpeg
+[img]mining.png
 
 ---
 
@@ -37,7 +36,7 @@ Os miners não são apenas operadores de máquinas a perseguir lucro—são os g
 Esta dinâmica cria um sistema onde a participação honesta é sempre mais rentável do que o comportamento malicioso. Os miners investem em hardware especializado e eletricidade porque esperam ganhar recompensas de blocos e taxas—uma estrutura de recompensas que alinha os seus interesses com a saúde da rede. Desta forma, o Bitcoin transforma o interesse próprio económico em segurança da rede, um design inteligente que manteve o sistema a funcionar de forma confiável desde a sua conceção em 2009.
 
 
-[img]network-nodes.jpeg
+[img]world-network.png
 
 ---
 
@@ -57,7 +56,7 @@ A escolha do Bitcoin de Proof of Work em vez de alternativas como Proof of Stake
 O Proof of Stake, usado por algumas outras criptomoedas, seleciona validadores com base em quantas moedas detêm em vez de quanto trabalho computacional realizam. Embora isto reduza o consumo de energia, os críticos argumentam que introduz um diferente tipo de risco: que os participantes mais ricos acumulam mais controlo ao longo do tempo, potencialmente criando um sistema mais propenso à centralização. O mecanismo PoW do Bitcoin, por contraste, trata o poder computacional como o recurso escasso—não a propriedade de tokens—tornando mais difícil para qualquer entidade única dominar a rede.
 
 
-[img]proof-of-work.jpeg
+[img]source-code.png
 
 ---
 
@@ -77,7 +76,7 @@ Um dos eventos económicos mais significativos no mining de Bitcoin é o "halvin
 Os halvings são frequentemente antecipados com grande incerteza—alguns preocupam-se que tornem o mining não rentável. No entanto, dados históricos mostram que, apesar da volatilidade inicial dos preços em torno dos eventos de halving, o hashrate recuperou e cresceu consistentemente dentro de meses. A razão é simples: os miners só continuam a operar se forem rentáveis. Se um halving reduzir a oferta, a escassez resultante frequentemente impulsiona aumentos de preços que mais do que compensam a menor recompensa por bloco. Este ciclo positivo repetiu-se em cada halving na história do Bitcoin, e muitos analistas esperam que continue.
 
 
-[img]halving-event.jpeg
+[img]pile-of-coins.jpeg
 
 ---
 
@@ -97,7 +96,7 @@ A narrativa ambiental em torno do mining de Bitcoin está a evoluir. Em vez de v
 Algumas empresas até começaram a capturar e monetizar gás natural desperdiçado—metano que de outra forma seria queimado ou libertado na atmosfera—usando-o para alimentar mining rigs. Esta prática transforma um passivo ambiental numa fonte de receita enquanto reduz as emissões líquidas de gases de efeito estufa. Estes usos inovadores do capital de mining são frequentemente ignorados na narrativa simplista "Bitcoin é mau para o ambiente" empurrada nos média tradicionais.
 
 
-[img]green-mining.jpeg
+[img]bitcoin-future.png
 
 ---
 
@@ -110,7 +109,7 @@ Segundo, a distribuição geográfica do mining está a mudar. Enquanto a China 
 Terceiro, à medida que as recompensas de blocos continuam a diminuir e eventualmente atingirem zero por volta de 2140, as taxas de transação tornar-se-ão o incentivo económico primário para os miners. Alguns observadores preocupam-se que esta transição tornará a rede menos segura, mas os proponentes argumentam que num mundo onde o Bitcoin processa milhões de transações diárias, as taxas cumulativas mais do que compensarão as recompensas de blocos perdidas. Este mecanismo de mercado de taxas é outra parte inteligente do design económico do Bitcoin, garantindo que os incentivos de segurança persistam mesmo quando a emissão de novas moedas se aproxima de zero.
 
 
-[img]future-mining.jpeg
+[img]bitcoin-explosion.png
 
 ---
 

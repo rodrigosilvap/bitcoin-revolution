@@ -6,7 +6,6 @@ image: "/images/blog/btc-etf-treasury.png"
 ---
 
 
-# Bitcoin vs ETF vs Tesouraria: Entendendo as Diferenças
 
 Conforme Bitcoin cresceu de um experimento de nicho para um ativo monetário globalmente reconhecido, as pessoas não o acessam mais de apenas uma forma. Hoje, você pode manter Bitcoin diretamente, comprá-lo através de produtos financeiros como ETFs, ou obter exposição via empresas que mantêm Bitcoin em seus balanços. Estas opções são frequentemente agrupadas, mas **não são a mesma coisa**. Cada uma pertence a uma lógica financeira diferente, com diferentes compensações em torno de controle, rentabilidade e risco.
 

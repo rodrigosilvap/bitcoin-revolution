@@ -2,11 +2,10 @@
 title: "Bitcoin Mining: The Engine Behind the Network"
 date: "2024-01-15"
 excerpt: "Understand how Bitcoin mining works, why it secures the network, and what it means for the future of money."
-image: "/images/blog/mining rigs.jpeg"
+image: "/images/blog/mining.png"
 ---
 
 
-# Bitcoin Mining: The Engine Behind the Network
 
 ## Introduction
 
@@ -17,7 +16,7 @@ Understanding mining is essential for anyone seeking to grasp why Bitcoin works 
 This article explains how Bitcoin mining works, why the Proof of Work consensus mechanism matters, and what the economic and environmental implications are for the network's long-term future.
 
 
-[img]mining-rigs.jpeg
+[img]mining.png
 
 ---
 
@@ -37,7 +36,7 @@ Miners are not just machine operators chasing profit—they are the guardians of
 This dynamic creates a system where honest participation is always more profitable than malicious behavior. Miners invest in specialized hardware and electricity because they expect to earn block rewards and fees—a reward structure that aligns their interests with the network's health. In this way, Bitcoin transforms economic self-interest into network security, a clever design that has kept the system running reliably since its inception in 2009.
 
 
-[img]network-nodes.jpeg
+[img]world-network.png
 
 ---
 
@@ -57,7 +56,7 @@ Bitcoin's choice of Proof of Work over alternatives like Proof of Stake was deli
 Proof of Stake, used by some other cryptocurrencies, selects validators based on how many coins they hold rather than how much computational work they perform. While this reduces energy consumption, critics argue it introduces a different kind of risk: that the richest participants accumulate more control over time, potentially creating a system more prone to centralization. Bitcoin's PoW mechanism, by contrast, treats computational power as the scarce resource—not token ownership—making it harder for any single entity to dominate the network.
 
 
-[img]proof-of-work.jpeg
+[img]source-code.png
 
 ---
 
@@ -77,7 +76,7 @@ One of the most significant economic events in Bitcoin mining is the "halving"�
 Halvings are often anticipated with great uncertainty—some worry they will make mining unprofitable. However, historical data shows that despite initial price volatility around halving events, the hashrate has consistently recovered and grown within months. The reason is simple: miners only continue to operate if they are profitable. If a halving reduces supply, the resulting scarcity often drives price increases that more than compensate for the lower reward per block. This positive cycle has repeated through every halving in Bitcoin's history, and many analysts expect it to continue.
 
 
-[img]halving-event.jpeg
+[img]pile-of-coins.jpeg
 
 ---
 
@@ -97,7 +96,7 @@ The environmental narrative around Bitcoin mining is evolving. Rather than viewi
 Some companies have even begun capturing and monetizing wasted natural gas—methane that would otherwise be flared or vented into the atmosphere—using it to power mining rigs. This practice turns an environmental liability into a revenue stream while reducing net greenhouse gas emissions. These innovative uses of mining capital are often overlooked in the simplistic "Bitcoin is bad for the environment" narrative pushed in legacy media.
 
 
-[img]green-mining.jpeg
+[img]bitcoin-future.png
 
 ---
 
@@ -110,7 +109,7 @@ Second, the geographic distribution of mining is shifting. While China once domi
 Third, as block rewards continue to halve and eventually reach zero around 2140, transaction fees will become the primary economic incentive for miners. Some observers worry this transition will make the network less secure, but proponents argue that in a world where Bitcoin processes millions of daily transactions, the cumulative fees will more than compensate for lost block rewards. This fee market mechanism is another clever part of Bitcoin's economic design, ensuring that security incentives persist even as new coin issuance approaches zero.
 
 
-[img]future-mining.jpeg
+[img]bitcoin-explosion.png
 
 ---
 

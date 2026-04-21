@@ -6,7 +6,6 @@ image: "/images/blog/btc-etf-treasury.png"
 ---
 
 
-# Bitcoin vs ETF vs Treasury: understanding the differences
 
 As Bitcoin has grown from a niche experiment into a globally recognized monetary asset, people no longer access it in just one way. Today, you can hold Bitcoin directly, buy it through financial products like ETFs, or gain exposure via companies that keep Bitcoin on their balance sheets. These options are often grouped together, but they are **not the same thing**. Each one belongs to a different financial logic, with different trade-offs around control, profitability, and risk.
 

@@ -6,7 +6,6 @@ image: "/images/blog/pile-of-coins.jpeg"
 ---
 
 
-# **Por que o Bitcoin é o Melhor Dinheiro**
 
 ## **Introdução**
 

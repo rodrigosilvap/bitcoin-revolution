@@ -5,7 +5,6 @@ excerpt: "Understanding Bitcoin's market requires more than reading price charts
 image: "/images/blog/pile-of-coins.jpeg"
 ---
 
-# Bitcoin Market Trends and Analysis
 
 ## Reading a Market Shaped by Different Rules
 

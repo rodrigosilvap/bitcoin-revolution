@@ -6,7 +6,6 @@ image: "/images/blog/investment-chart.jpeg"
 ---
 
 
-# Bitcoin Investment Strategy
 
 ## Introduction
 

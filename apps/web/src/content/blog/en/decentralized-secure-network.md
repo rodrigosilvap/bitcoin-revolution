@@ -6,7 +6,6 @@ image: "/images/blog/world-network.png"
 ---
 
 
-# A true Decentralized Secure Money
 
 Money has always relied on trust.
 

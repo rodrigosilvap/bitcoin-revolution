@@ -6,7 +6,6 @@ image: "/images/blog/bitcoin-payment-disruption.png"
 ---
 
 
-# The Future of Digital Payments
 
 ## Why Bitcoin Has the Potential to Replace Banks, Cards, and Fintech Rails
 

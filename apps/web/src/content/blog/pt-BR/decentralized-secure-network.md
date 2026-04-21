@@ -6,7 +6,6 @@ image: "/images/blog/world-network.png"
 ---
 
 
-# Um Dinheiro Verdadeiramente Descentralizado e Seguro
 
 O dinheiro sempre dependeu de confiança.
 

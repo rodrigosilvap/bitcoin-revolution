@@ -5,7 +5,6 @@ excerpt: "Antes do Bitcoin, criar dinheiro digital que não pudesse ser copiado 
 image: "/images/blog/world-network.png"
 ---
 
-# Tecnologia Blockchain Explicada
 
 ## O Problema que Antecedeu a Solução
 

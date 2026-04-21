@@ -5,7 +5,6 @@ excerpt: "Entender o mercado do Bitcoin exige mais do que ler gráficos de preç
 image: "/images/blog/pile-of-coins.jpeg"
 ---
 
-# Tendências e Análise do Mercado Bitcoin
 
 ## Lendo um Mercado Regido por Regras Diferentes
 

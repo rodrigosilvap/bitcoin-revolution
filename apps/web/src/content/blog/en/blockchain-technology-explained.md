@@ -5,7 +5,6 @@ excerpt: "Before Bitcoin, creating digital money that couldn't be copied seemed 
 image: "/images/blog/world-network.png"
 ---
 
-# Blockchain Technology Explained
 
 ## The Problem That Preceded the Solution
 

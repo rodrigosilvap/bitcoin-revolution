@@ -6,7 +6,6 @@ image: "/images/blog/preserving-wealth.png"
 ---
 
 
-# Bitcoin como Reserva de Valor
 
 ## Preservando Riqueza em um Mundo Inflacionário
 
