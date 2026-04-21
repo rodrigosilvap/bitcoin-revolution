@@ -2,10 +2,8 @@
 title: "Strategy's $2.54 Billion Bitcoin Purchase: What It Means for the Market"
 date: "2026-04-21"
 excerpt: "Strategy (formerly MicroStrategy) just bought $2.54 billion worth of Bitcoin — its biggest acquisition since November 2024. Here's what this institutional buying spree means for the market."
-image: "/images/blog/placeholder.jpeg"
+image: "/images/blog/strategy-bitcoin-purchase.jpeg"
 ---
-
-# Strategy's $2.54 Billion Bitcoin Purchase: What It Means for the Market
 
 ## Introduction
 
@@ -43,7 +41,7 @@ According to CoinShares' weekly digital asset report, this surge in demand was s
 * **Favorable US Consumer Price Index (CPI) data**, which reduced pressure on interest rate expectations
 * **Renewed institutional confidence** in Bitcoin as a macro hedge and store of value
 
-These inflows signal that large players — from asset managers to sovereign entities — are重新入场 (re-entering) the market after a period of consolidation.
+These inflows signal that large players — from asset managers to sovereign entities — are re-entering the market after a period of consolidation.
 
 [img]etf-inflows-bitcoin.jpeg
 

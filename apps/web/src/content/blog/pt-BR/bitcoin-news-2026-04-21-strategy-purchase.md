@@ -2,10 +2,8 @@
 title: "Compra de $2.54 mil milhões em Bitcoin pela Strategy: O Que Significa para o Mercado"
 date: "2026-04-21"
 excerpt: "A Strategy (antiga MicroStrategy) comprou $2.54 mil milhões em Bitcoin — a maior aquisição desde novembro de 2024. Descobre o que esta onda de compra institucional significa para o mercado."
-image: "/images/blog/placeholder.jpeg"
+image: "/images/blog/strategy-bitcoin-purchase.jpeg"
 ---
-
-# Compra de $2.54 mil milhões em Bitcoin pela Strategy: O Que Significa para o Mercado
 
 ## Introdução
 
@@ -59,7 +57,7 @@ Para os detentores de Bitcoin, esta resiliência é significativa. Historicament
 
 ## A Mudança no Dividendo da STRC: O Que os Investidores Devem Saber
 
-A Strategy também revelou uma mudança administrativanotável: o calendário de pagamento de dividendos das suas ações preferenciais STRC (Variable Rate Series A Perpetual Stretch Preferred Stock)will shift from **monthly to semi-monthly**, pending shareholder approval at the company's annual meeting in June.
+A Strategy também revelou uma mudança administrativa notável: o calendário de pagamento de dividendos das suas ações preferenciais STRC (Variable Rate Series A Perpetual Stretch Preferred Stock) passará de **mensal para quinzenal**, sujeito à aprovação dos acionistas na assembleia geral anual da empresa em junho.
 
 Se aprovada, a nova agenda — com o primeiro pagamento semestral a 15 de julho — foi concebida para:
 
