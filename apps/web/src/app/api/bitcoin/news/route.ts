@@ -18,6 +18,7 @@ export interface NewsItem {
   sourceId: string;
   category: string;
   publishedAt: number;
+  imageUrl?: string;
 }
 
 export interface SourceStatus {
@@ -56,6 +57,32 @@ function parseDate(raw: string | undefined): number {
   if (!raw) return 0;
   const d = new Date(raw);
   return isNaN(d.getTime()) ? 0 : d.getTime();
+}
+
+function extractImageUrl(item: Record<string, unknown>): string | undefined {
+  // <enclosure url="..." type="image/...">
+  const enc = item['enclosure'] as Record<string, unknown> | undefined;
+  if (enc?.['@_url'] && String(enc['@_type'] ?? '').startsWith('image')) {
+    return String(enc['@_url']);
+  }
+
+  // <media:content url="..."> (MediaRSS)
+  const mc = item['media:content'] as Record<string, unknown> | undefined;
+  if (mc?.['@_url']) return String(mc['@_url']);
+
+  // <media:thumbnail url="...">
+  const mt = item['media:thumbnail'] as Record<string, unknown> | undefined;
+  if (mt?.['@_url']) return String(mt['@_url']);
+
+  // Some feeds put image URL directly in <image>
+  const img = item['image'] as Record<string, unknown> | string | undefined;
+  if (typeof img === 'string' && img.startsWith('http')) return img;
+  if (typeof img === 'object' && img !== null) {
+    const u = img['url'] ?? img['@_url'];
+    if (u) return String(u);
+  }
+
+  return undefined;
 }
 
 // ─── RSS fetcher ──────────────────────────────────────────────────────────────
@@ -107,6 +134,8 @@ async function fetchFeed(source: NewsSource): Promise<NewsItem[]> {
     const dateRaw = item['pubDate'] ?? item['published'] ?? item['updated'] ?? item['dc:date'];
     const publishedAt = parseDate(String(dateRaw ?? ''));
 
+    const imageUrl = extractImageUrl(item);
+
     return {
       id: hashUrl(url || title),
       title,
@@ -116,6 +145,7 @@ async function fetchFeed(source: NewsSource): Promise<NewsItem[]> {
       sourceId: source.id,
       category: source.category,
       publishedAt,
+      ...(imageUrl ? { imageUrl } : {}),
     } satisfies NewsItem;
   }).filter(i => i.title && i.url);
 }

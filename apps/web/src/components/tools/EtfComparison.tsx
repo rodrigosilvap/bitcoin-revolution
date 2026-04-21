@@ -330,17 +330,19 @@ export function EtfComparison() {
 
       {/* ── Table with tabs ───────────────────────────────────────────── */}
       <Card className="overflow-hidden">
+        <div className="flex items-center justify-end px-6 pt-4">
+          <Button variant="ghost" size="sm" onClick={load} className="gap-1.5 text-muted-foreground">
+            <RefreshCw className="h-3.5 w-3.5" />
+            {lastUpdated ? `${t('lastUpdated')}: ${lastUpdated.toLocaleTimeString()}` : ''}
+          </Button>
+        </div>
         <Tabs defaultValue="all">
-          <div className="flex items-center justify-between flex-wrap gap-2 px-6 pt-6 pb-4">
+          <div className="px-6 pb-4">
             <TabsList>
               <TabsTrigger value="all">{t('tabAll')} ({allRows.length})</TabsTrigger>
               <TabsTrigger value="etfs">{t('tabEtfs')} ({etfRows.length})</TabsTrigger>
               <TabsTrigger value="companies">{t('tabCompanies')} ({companyRows.length})</TabsTrigger>
             </TabsList>
-            <Button variant="ghost" size="sm" onClick={load} className="gap-1.5 text-muted-foreground">
-              <RefreshCw className="h-3.5 w-3.5" />
-              {lastUpdated ? `${t('lastUpdated')}: ${lastUpdated.toLocaleTimeString()}` : ''}
-            </Button>
           </div>
 
           <TabsContent value="all" className="mt-0">
